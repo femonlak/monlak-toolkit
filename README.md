@@ -4,8 +4,10 @@ Toolkit pessoal para Claude Code.
 
 ## Instalação
 ```bash
-/plugin marketplace add monlak/monlak-toolkit
+/plugin marketplace add https://github.com/femonlak/monlak-toolkit.git
 ```
+
+Exemplo de instalação de skill especifica:
 ```bash
 /plugin install deploy-vercel@monlak-toolkit
 ```
