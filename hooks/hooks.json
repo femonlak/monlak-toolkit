@@ -1,0 +1,26 @@
+{
+  "hooks": [
+    {
+      "matcher": "Notification",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "afplay /System/Library/Sounds/Glass.aiff",
+          "event": "stop",
+          "stop_reason": ["tool_use"]
+        }
+      ]
+    },
+    {
+      "matcher": "Stop",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "afplay /System/Library/Sounds/Hero.aiff",
+          "event": "stop",
+          "stop_reason": ["end_turn"]
+        }
+      ]
+    }
+  ]
+}
