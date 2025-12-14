@@ -5,6 +5,8 @@ Toolkit pessoal para Claude Code.
 ## Instalação
 ```bash
 /plugin marketplace add monlak/monlak-toolkit
+```
+```bash
 /plugin install deploy-vercel@monlak-toolkit
 ```
 
