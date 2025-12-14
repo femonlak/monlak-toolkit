@@ -29,17 +29,3 @@ Localização: `global/CLAUDE.md`
 Sons de notificação para feedback auditivo durante o uso do Claude Code. Hooks precisam ser configurados manualmente no `~/.claude/settings.json`.
 
 Referência: `hooks/hooks.json`
-
-## Estrutura
-```
-monlak-toolkit/
-├── .claude-plugin/
-│   └── marketplace.json
-├── deploy-vercel/
-│   └── SKILL.md
-├── global/
-│   └── CLAUDE.md
-├── hooks/
-│   └── hooks.json
-└── README.md
-```
