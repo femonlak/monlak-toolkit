@@ -1,13 +1,13 @@
 {
   "name": "monlak-toolkit",
-  "version": "1.0.0",
-  "description": "Toolkit pessoal do Felipe Monlak para Claude Code",
-  "author": "monlak",
-  "hooks": "../hooks/hooks.json",
-  "skills": [
+  "owner": {
+    "name": "Felipe Monlak"
+  },
+  "plugins": [
     {
       "name": "deploy-vercel",
-      "path": "../skills/deploy-vercel/SKILL.md"
+      "source": "./deploy-vercel",
+      "description": "Workflow completo de commit + deploy na Vercel com auto-recovery"
     }
   ]
 }
