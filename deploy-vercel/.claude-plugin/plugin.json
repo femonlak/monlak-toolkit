@@ -1,0 +1,4 @@
+{
+  "name": "deploy-vercel",
+  "description": "Workflow completo de commit + deploy na Vercel com auto-recovery"
+}
