@@ -8,6 +8,51 @@
       "name": "deploy-vercel",
       "source": "./deploy-vercel",
       "description": "Workflow completo de commit + deploy na Vercel com auto-recovery"
+    },
+    {
+      "name": "new-feature",
+      "source": "./new-feature",
+      "description": "Orquestrar desenvolvimento completo de nova feature, desde ideação até implementação"
+    },
+    {
+      "name": "dev-commands",
+      "source": "./commands",
+      "description": "Slash commands para desenvolvimento: /fix, /git-sync, /enhance-feature",
+      "commands": "./commands",
+      "strict": false
     }
   ]
 }
+```
+
+4. **Commit changes**
+
+---
+
+## Pronto!
+
+Estrutura final do repo:
+```
+monlak-toolkit/
+├── .claude-plugin/
+│   └── marketplace.json
+├── deploy-vercel/
+│   └── SKILL.md
+├── new-feature/
+│   ├── SKILL.md
+│   └── references/
+│       ├── 00-mini-prd.md
+│       ├── 01-product-specs.md
+│       ├── 02-ux-ui.md
+│       ├── 03-data-model.md
+│       ├── 04-critique.md
+│       └── 05-update-docs.md
+├── commands/
+│   ├── fix.md
+│   ├── git-sync.md
+│   └── enhance-feature.md
+├── global/
+│   └── CLAUDE.md
+├── hooks/
+│   └── hooks.json
+└── README.md
