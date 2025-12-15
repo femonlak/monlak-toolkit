@@ -7,27 +7,55 @@ Toolkit pessoal para Claude Code.
 /plugin marketplace add https://github.com/femonlak/monlak-toolkit.git
 ```
 
-Exemplo de instalação de skill especifica:
+Instalar plugins específicos:
 ```bash
-/plugin install deploy-vercel@monlak-toolkit
+/plugin install deploy-vercel@femonlak-monlak-toolkit
+/plugin install new-feature@femonlak-monlak-toolkit
+/plugin install dev-commands@femonlak-monlak-toolkit
 ```
 
 ## Skills
 
-| Nome | Descrição |
-|------|-----------|
-| deploy-vercel | Automatiza commit, push e deploy na Vercel com monitoramento, correção automática de erros, criação de PR e merge |
+| Nome | Descrição | Gatilhos |
+|------|-----------|----------|
+| deploy-vercel | Ciclo completo de deploy: commit, push, monitoramento Vercel, auto-fix (3x), PR e merge | "faz commit e deploy", "deploy tudo" |
+| new-feature | Orquestra desenvolvimento de feature: Product → UX/UI → Data Model → Revisão → Implementação → Docs | "nova feature", "implementar feature" |
+
+## Slash Commands
+
+| Comando | Descrição |
+|---------|-----------|
+| /fix | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
+| /git-sync | Sincronizar repositório local com remoto, apresentando plano antes de executar |
+| /enhance-feature | Adicionar melhoria incremental em feature existente |
 
 ## Extras
 
 ### CLAUDE.md global
 
-Instruções de comportamento que se aplicam a todos os projetos. Copie para `~/.claude/CLAUDE.md` para ativar globalmente.
-
-Localização: `global/CLAUDE.md`
+Instruções de comportamento para todos os projetos. Copie para `~/.claude/CLAUDE.md`.
 
 ### Hooks
 
-Sons de notificação para feedback auditivo durante o uso do Claude Code. Hooks precisam ser configurados manualmente no `~/.claude/settings.json`.
+Sons de notificação (Glass.aiff e Hero.aiff). Configure manualmente no `~/.claude/settings.json`. Referência em `hooks/hooks.json`.
 
-Referência: `hooks/hooks.json`
+## Estrutura
+```
+monlak-toolkit/
+├── .claude-plugin/
+│   └── marketplace.json
+├── deploy-vercel/
+│   └── SKILL.md
+├── new-feature/
+│   ├── SKILL.md
+│   └── references/
+├── commands/
+│   ├── fix.md
+│   ├── git-sync.md
+│   └── enhance-feature.md
+├── global/
+│   └── CLAUDE.md
+├── hooks/
+│   └── hooks.json
+└── README.md
+```
