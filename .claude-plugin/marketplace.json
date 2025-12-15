@@ -18,9 +18,8 @@
       "name": "dev-commands",
       "source": "./commands",
       "description": "Slash commands para desenvolvimento: /fix, /git-sync, /enhance-feature",
-      "commands": "./commands",
+      "commands": ".",
       "strict": false
     }
   ]
 }
-
