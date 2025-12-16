@@ -1,4 +1,5 @@
 {
   "name": "new-feature",
-  "description": "Orquestrar desenvolvimento completo de nova feature, desde ideação até implementação"
+  "description": "Orquestrar desenvolvimento completo de nova feature, desde ideação até implementação",
+  "version": "1.0.0"
 }
