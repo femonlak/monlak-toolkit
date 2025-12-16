@@ -1,6 +1,8 @@
 {
   "name": "monlak-toolkit",
-  "owner": "Felipe Monlak",
+  "owner": {
+    "name": "Felipe Monlak"
+  },
   "plugins": [
     {
       "name": "deploy-vercel",
