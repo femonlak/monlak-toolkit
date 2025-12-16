@@ -1,8 +1,6 @@
 {
   "name": "monlak-toolkit",
-  "owner": {
-    "name": "Felipe Monlak"
-  },
+  "owner": "Felipe Monlak",
   "plugins": [
     {
       "name": "deploy-vercel",
@@ -12,14 +10,12 @@
     {
       "name": "new-feature",
       "source": "./new-feature",
-      "description": "Orquestrar desenvolvimento completo de nova feature, desde ideação até implementação"
+      "description": "Orquestrar desenvolvimento completo de nova feature"
     },
     {
       "name": "dev-commands",
-      "source": "./commands",
-      "description": "Slash commands para desenvolvimento: /fix, /git-sync, /enhance-feature",
-      "commands": ".",
-      "strict": false
+      "source": "./dev-commands",
+      "description": "Comandos de desenvolvimento: /fix, /git-sync, /enhance-feature"
     }
   ]
 }
