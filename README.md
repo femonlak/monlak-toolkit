@@ -12,6 +12,7 @@ Instalar plugins específicos:
 /plugin install deploy-vercel@femonlak-monlak-toolkit
 /plugin install new-feature@femonlak-monlak-toolkit
 /plugin install dev-commands@femonlak-monlak-toolkit
+/plugin install consulting@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -20,6 +21,7 @@ Instalar plugins específicos:
 | --- | --- | --- |
 | deploy-vercel | Ciclo completo de deploy: commit, push, monitoramento Vercel, auto-fix (3x), PR e merge | "faz commit e deploy", "deploy tudo" |
 | new-feature | Orquestra desenvolvimento de feature: Product → UX/UI → Data Model → Revisão → Implementação → Docs | "nova feature", "implementar feature" |
+| consulting | Frameworks de consultoria (McKinsey, BCG, Bain, Accenture) para problem-solving e análise estratégica | "análise estratégica", "framework de consultoria", "SWOT", "Porter", "market sizing" |
 
 ## Slash Commands
 
@@ -64,6 +66,14 @@ monlak-toolkit/
 │       ├── fix.md
 │       ├── git-sync.md
 │       └── enhance-feature.md
+├── consulting/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── consulting/
+│           ├── SKILL.md
+│           ├── references/
+│           └── assets/templates/
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

@@ -18,6 +18,11 @@
       "name": "dev-commands",
       "source": "./dev-commands",
       "description": "Comandos de desenvolvimento: /fix, /git-sync, /enhance-feature"
+    },
+    {
+      "name": "consulting",
+      "source": "./consulting",
+      "description": "Frameworks de consultoria para problem-solving e análise estratégica"
     }
   ]
 }
