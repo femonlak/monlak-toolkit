@@ -13,6 +13,7 @@ Instalar plugins específicos:
 /plugin install new-feature@femonlak-monlak-toolkit
 /plugin install dev-commands@femonlak-monlak-toolkit
 /plugin install consulting@femonlak-monlak-toolkit
+/plugin install supabase-expert@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -22,6 +23,7 @@ Instalar plugins específicos:
 | deploy-vercel | Ciclo completo de deploy: commit, push, monitoramento Vercel, auto-fix (3x), PR e merge | "faz commit e deploy", "deploy tudo" |
 | new-feature | Orquestra desenvolvimento de feature: Product → UX/UI → Data Model → Revisão → Implementação → Docs | "nova feature", "implementar feature" |
 | consulting | Frameworks de consultoria (McKinsey, BCG, Bain, Accenture) para problem-solving e análise estratégica | "análise estratégica", "framework de consultoria", "SWOT", "Porter", "market sizing" |
+| supabase-expert | Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices | trabalho com database, backend, Supabase, migrations, RLS policies |
 
 ## Slash Commands
 
@@ -74,6 +76,13 @@ monlak-toolkit/
 │           ├── SKILL.md
 │           ├── references/
 │           └── assets/templates/
+├── supabase-expert/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── supabase-expert/
+│           ├── SKILL.md
+│           └── references/
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

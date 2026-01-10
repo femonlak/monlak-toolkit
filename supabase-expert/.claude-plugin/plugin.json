@@ -1,0 +1,5 @@
+{
+  "name": "supabase-expert",
+  "description": "Especialista Supabase para backend: schema, migrations, RLS, realtime, Edge Functions e best practices",
+  "version": "1.0.0"
+}

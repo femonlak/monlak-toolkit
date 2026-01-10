@@ -23,6 +23,11 @@
       "name": "consulting",
       "source": "./consulting",
       "description": "Frameworks de consultoria para problem-solving e análise estratégica"
+    },
+    {
+      "name": "supabase-expert",
+      "source": "./supabase-expert",
+      "description": "Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices"
     }
   ]
 }
