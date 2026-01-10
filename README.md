@@ -14,6 +14,7 @@ Instalar plugins específicos:
 /plugin install dev-commands@femonlak-monlak-toolkit
 /plugin install consulting@femonlak-monlak-toolkit
 /plugin install supabase-expert@femonlak-monlak-toolkit
+/plugin install frontend-design@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -24,6 +25,7 @@ Instalar plugins específicos:
 | new-feature | Orquestra desenvolvimento de feature: Product → UX/UI → Data Model → Revisão → Implementação → Docs | "nova feature", "implementar feature" |
 | consulting | Frameworks de consultoria (McKinsey, BCG, Bain, Accenture) para problem-solving e análise estratégica | "análise estratégica", "framework de consultoria", "SWOT", "Porter", "market sizing" |
 | supabase-expert | Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices | trabalho com database, backend, Supabase, migrations, RLS policies |
+| frontend-design | Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform | building UI components, React, React Native, design system, animações, mobile patterns |
 
 ## Slash Commands
 
@@ -81,6 +83,13 @@ monlak-toolkit/
 │   │   └── plugin.json
 │   └── skills/
 │       └── supabase-expert/
+│           ├── SKILL.md
+│           └── references/
+├── frontend-design/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── frontend-design/
 │           ├── SKILL.md
 │           └── references/
 ├── global/

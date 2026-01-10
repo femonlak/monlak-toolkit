@@ -28,6 +28,11 @@
       "name": "supabase-expert",
       "source": "./supabase-expert",
       "description": "Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices"
+    },
+    {
+      "name": "frontend-design",
+      "source": "./frontend-design",
+      "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform"
     }
   ]
 }
