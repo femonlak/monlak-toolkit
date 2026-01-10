@@ -28,6 +28,30 @@ Instruções globais que se aplicam a todos os projetos do Felipe.
 - Make minimal changes - fix only what's needed
 - When in doubt, ask before changing
 
+## Skills Reference
+
+### frontend-design
+Use PROACTIVELY when:
+- Building UI components or pages
+- Implementing interactions, animations, or micro-interactions
+- Working with React or React Native
+- Designing component APIs or design systems
+- Implementing mobile-specific patterns (gestures, haptics, bottom sheets)
+- Making cross-platform architecture decisions
+- Creating distinctive visual designs
+- Any frontend task where UX quality matters
+
+### supabase-expert
+Use PROACTIVELY when:
+- Creating or modifying database schema/migrations
+- Implementing RLS policies or security features
+- Working with realtime subscriptions
+- Implementing optimistic UI with Supabase
+- Writing complex queries or joins
+- Setting up Edge Functions
+- Debugging database or auth issues
+- Any backend task involving Supabase
+
 ## Setup Instructions
 
 Para usar este arquivo globalmente, copie para `~/.claude/CLAUDE.md`:
