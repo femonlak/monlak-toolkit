@@ -1,8 +1,0 @@
-{
-  "name": "monlak-toolkit-manager",
-  "version": "1.0.0",
-  "description": "Meta-comando para adicionar ou atualizar arquivos no plugin monlak-toolkit",
-  "author": {
-    "name": "Monlak"
-  }
-}

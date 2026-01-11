@@ -11,11 +11,10 @@ Instalar plugins específicos:
 ```
 /plugin install deploy-vercel@femonlak-monlak-toolkit
 /plugin install new-feature@femonlak-monlak-toolkit
-/plugin install dev-commands@femonlak-monlak-toolkit
+/plugin install my-commands@femonlak-monlak-toolkit
 /plugin install consulting@femonlak-monlak-toolkit
 /plugin install supabase-expert@femonlak-monlak-toolkit
 /plugin install frontend-design@femonlak-monlak-toolkit
-/plugin install monlak-toolkit-manager@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -35,7 +34,6 @@ Instalar plugins específicos:
 | /fix | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
 | /git-sync | Sincronizar repositório local com remoto, apresentando plano antes de executar |
 | /enhance-feature | Adicionar melhoria incremental em feature existente |
-| /monlak-toolkit | Adicionar ou atualizar arquivo no plugin monlak-toolkit |
 
 ## Extras
 
@@ -65,13 +63,14 @@ monlak-toolkit/
 │       └── workflow/
 │           ├── SKILL.md
 │           └── references/
-├── dev-commands/
+├── my-commands/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   └── commands/
 │       ├── fix.md
 │       ├── git-sync.md
-│       └── enhance-feature.md
+│       ├── enhance-feature.md
+│       └── monlak-toolkit.md
 ├── consulting/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
@@ -94,11 +93,6 @@ monlak-toolkit/
 │       └── frontend-design/
 │           ├── SKILL.md
 │           └── references/
-├── monlak-toolkit-manager/
-│   ├── .claude-plugin/
-│   │   └── plugin.json
-│   └── commands/
-│       └── monlak-toolkit.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

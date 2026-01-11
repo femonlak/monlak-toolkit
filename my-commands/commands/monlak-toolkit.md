@@ -332,11 +332,11 @@ O arquivo pode estar corrompido. Você quer que eu:
 
 → Analisa o arquivo
 → Identifica como Command chamado "fix"
-→ Verifica que "fix" já existe em dev-commands
+→ Verifica que "fix" já existe em my-commands
 → Mostra diff das mudanças
 → Confirma com usuário se quer atualizar
 → Atualiza arquivo
-→ Incrementa versão do plugin dev-commands
+→ Incrementa versão do plugin my-commands
 → Commit e push
 ```
 

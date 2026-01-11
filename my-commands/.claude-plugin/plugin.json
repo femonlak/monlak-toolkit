@@ -1,5 +1,5 @@
 {
-  "name": "dev-commands",
+  "name": "my-commands",
   "description": "Comandos de desenvolvimento: fix bugs, sync repos, enhance features",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
