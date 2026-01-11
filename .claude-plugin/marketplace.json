@@ -15,9 +15,9 @@
       "description": "Orquestrar desenvolvimento completo de nova feature"
     },
     {
-      "name": "dev-commands",
-      "source": "./dev-commands",
-      "description": "Comandos de desenvolvimento: /fix, /git-sync, /enhance-feature"
+      "name": "my-commands",
+      "source": "./my-commands",
+      "description": "Comandos de desenvolvimento: /fix, /git-sync, /enhance-feature, /monlak-toolkit"
     },
     {
       "name": "consulting",
@@ -33,11 +33,6 @@
       "name": "frontend-design",
       "source": "./frontend-design",
       "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform"
-    },
-    {
-      "name": "monlak-toolkit-manager",
-      "source": "./monlak-toolkit-manager",
-      "description": "Meta-comando para adicionar ou atualizar arquivos no plugin monlak-toolkit"
     }
   ]
 }
