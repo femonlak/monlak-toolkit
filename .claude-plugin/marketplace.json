@@ -33,6 +33,11 @@
       "name": "frontend-design",
       "source": "./frontend-design",
       "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform"
+    },
+    {
+      "name": "kickstart",
+      "source": "./kickstart",
+      "description": "Inicializar projetos com tech stack completo, configuração e ambiente de desenvolvimento"
     }
   ]
 }
