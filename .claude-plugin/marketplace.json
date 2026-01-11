@@ -33,6 +33,11 @@
       "name": "frontend-design",
       "source": "./frontend-design",
       "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform"
+    },
+    {
+      "name": "monlak-toolkit-manager",
+      "source": "./monlak-toolkit-manager",
+      "description": "Meta-comando para adicionar ou atualizar arquivos no plugin monlak-toolkit"
     }
   ]
 }

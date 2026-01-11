@@ -15,6 +15,7 @@ Instalar plugins específicos:
 /plugin install consulting@femonlak-monlak-toolkit
 /plugin install supabase-expert@femonlak-monlak-toolkit
 /plugin install frontend-design@femonlak-monlak-toolkit
+/plugin install monlak-toolkit-manager@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -34,6 +35,7 @@ Instalar plugins específicos:
 | /fix | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
 | /git-sync | Sincronizar repositório local com remoto, apresentando plano antes de executar |
 | /enhance-feature | Adicionar melhoria incremental em feature existente |
+| /monlak-toolkit | Adicionar ou atualizar arquivo no plugin monlak-toolkit |
 
 ## Extras
 
@@ -92,6 +94,11 @@ monlak-toolkit/
 │       └── frontend-design/
 │           ├── SKILL.md
 │           └── references/
+├── monlak-toolkit-manager/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── commands/
+│       └── monlak-toolkit.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/
