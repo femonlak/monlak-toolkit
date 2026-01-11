@@ -25,16 +25,21 @@ monlak-toolkit/
 ├── [plugin-name]/              # Cada plugin é uma pasta no root
 │   ├── .claude-plugin/
 │   │   └── plugin.json
-│   ├── SKILL.md               # Para skills
-│   ├── commands/              # Para commands
+│   ├── SKILL.md               # Se for skill
+│   ├── commands/              # Se tiver commands
 │   │   └── *.md
-│   ├── agents/                # Para agents
+│   ├── agents/                # Se tiver agents
 │   │   └── *.md
-│   ├── hooks/                 # Para hooks
+│   ├── hooks/                 # Se tiver hooks
 │   │   └── hooks.json
 │   └── references/            # Opcional para skills
 └── README.md
 ```
+
+**Plugins existentes:**
+- `deploy-vercel/` - Skill de deploy
+- `new-feature/` - Skill de feature development
+- `my-commands/` - Todos os commands (destino padrão)
 
 ### Tipos de componentes suportados
 
@@ -67,12 +72,19 @@ Analisei o arquivo. Aqui está o que encontrei:
 
 Este componente será adicionado como plugin [**novo**/**atualização do existente**] no monlak-toolkit.
 
-**Ações que serei feitas:**
-- [Criar novo plugin `nome-do-plugin`] OU [Atualizar plugin existente `nome-do-plugin`]
+**Ações que serão feitas:**
+- [Skills] Criar novo plugin `nome-da-skill` OU atualizar existente
+- [Commands] Adicionar em `my-commands/commands/` (ou plugin especificado por você)
+- [Agents] Adicionar em plugin especificado por você
+- [Hooks] Adicionar em plugin especificado por você
 - Copiar arquivos para a estrutura correta
 - Criar/atualizar `.claude-plugin/plugin.json` do plugin
-- Adicionar entrada no `.claude-plugin/marketplace.json` (se novo)
+- Adicionar entrada no `.claude-plugin/marketplace.json` (se plugin novo)
 - Atualizar README.md com informações do componente
+
+**[Se for Command]** Qual plugin usar? (deixe em branco para `my-commands`)
+**[Se for Agent]** Qual plugin usar? (nome do plugin ou deixe em branco para criar novo)
+**[Se for Hook]** Qual plugin usar? (nome do plugin ou deixe em branco para criar novo)
 
 Confirma que posso prosseguir?
 
@@ -105,28 +117,40 @@ Baseado no tipo identificado:
 
 #### Para Skills:
 ```bash
-# Criar estrutura do plugin
+# Criar estrutura do plugin (nome do plugin = nome da skill)
 mkdir -p [plugin-name]/.claude-plugin
 mkdir -p [plugin-name]/references  # se houver
 
 # Copiar arquivo(s)
 cp [caminho-origem]/SKILL.md [plugin-name]/
 cp -r [caminho-origem]/references/* [plugin-name]/references/  # se houver
+
+# Nota: Skills são plugins standalone, cada skill = um plugin
 ```
 
 #### Para Commands:
 ```bash
-# Criar estrutura do plugin
-mkdir -p [plugin-name]/.claude-plugin
-mkdir -p [plugin-name]/commands
+# Commands vão SEMPRE para o plugin my-commands (padrão)
+# A não ser que o usuário especifique outro plugin
+
+# Perguntar ao usuário na confirmação:
+# "Este command será adicionado em my-commands. 
+#  Quer usar outro plugin? (deixe em branco para my-commands)"
+
+mkdir -p my-commands/.claude-plugin
+mkdir -p my-commands/commands
 
 # Copiar comando
-cp [caminho-origem] [plugin-name]/commands/[nome].md
+cp [caminho-origem] my-commands/commands/[nome].md
+
+# Nota: Se usuário especificar plugin diferente, 
+# usar: [plugin-especificado]/commands/[nome].md
 ```
 
 #### Para Agents:
 ```bash
-# Criar estrutura do plugin
+# Perguntar ao usuário qual plugin usar na fase de confirmação
+
 mkdir -p [plugin-name]/.claude-plugin
 mkdir -p [plugin-name]/agents
 
@@ -136,7 +160,8 @@ cp [caminho-origem] [plugin-name]/agents/[nome].md
 
 #### Para Hooks:
 ```bash
-# Criar estrutura do plugin
+# Perguntar ao usuário qual plugin usar na fase de confirmação
+
 mkdir -p [plugin-name]/.claude-plugin
 mkdir -p [plugin-name]/hooks
 
@@ -145,6 +170,12 @@ cp [caminho-origem] [plugin-name]/hooks/hooks.json
 ```
 
 ### Fase 4: Criar/Atualizar Metadados do Plugin
+
+**Nome do plugin baseado no tipo:**
+- Skills: nome da skill (ex: `kickstart` para kickstart.skill)
+- Commands: `my-commands` (padrão) ou plugin especificado pelo usuário
+- Agents: plugin especificado pelo usuário
+- Hooks: plugin especificado pelo usuário
 
 Criar ou atualizar `[plugin-name]/.claude-plugin/plugin.json`:
 
@@ -332,10 +363,10 @@ O arquivo pode estar corrompido. Você quer que eu:
 
 → Analisa o arquivo
 → Identifica como Command chamado "fix"
-→ Verifica que "fix" já existe em my-commands
+→ Verifica que "fix" já existe em my-commands/commands/
 → Mostra diff das mudanças
 → Confirma com usuário se quer atualizar
-→ Atualiza arquivo
+→ Atualiza arquivo em my-commands/commands/fix.md
 → Incrementa versão do plugin my-commands
 → Commit e push
 ```
