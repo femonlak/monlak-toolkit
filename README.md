@@ -15,6 +15,7 @@ Instalar plugins específicos:
 /plugin install consulting@femonlak-monlak-toolkit
 /plugin install supabase-expert@femonlak-monlak-toolkit
 /plugin install frontend-design@femonlak-monlak-toolkit
+/plugin install kickstart@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -26,6 +27,7 @@ Instalar plugins específicos:
 | consulting | Frameworks de consultoria (McKinsey, BCG, Bain, Accenture) para problem-solving e análise estratégica | "análise estratégica", "framework de consultoria", "SWOT", "Porter", "market sizing" |
 | supabase-expert | Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices | trabalho com database, backend, Supabase, migrations, RLS policies |
 | frontend-design | Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform | building UI components, React, React Native, design system, animações, mobile patterns |
+| kickstart | Inicializar projetos com tech stack completo (web/mobile), Supabase, style guide, GitHub/Vercel/Expo e validação de tools | "kickstart this project", "iniciar projeto", "use kickstart skill" |
 
 ## Slash Commands
 
@@ -93,6 +95,19 @@ monlak-toolkit/
 │       └── frontend-design/
 │           ├── SKILL.md
 │           └── references/
+├── kickstart/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   ├── SKILL.md
+│   └── references/
+│       ├── step1-tech-stack.md
+│       ├── step2-stack-configuration.md
+│       ├── step3-supabase-setup.md
+│       ├── step4-style-guide.md
+│       ├── step5-github-setup.md
+│       ├── step6-vercel-deployment.md
+│       ├── step7-expo-deployment.md
+│       └── step8-tools-validation.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

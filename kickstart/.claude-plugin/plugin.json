@@ -1,0 +1,8 @@
+{
+  "name": "kickstart",
+  "version": "1.0.0",
+  "description": "Initialize new projects with complete tech stack setup, configuration, and development environment. Handles tech stack definition (web/mobile/both), Supabase configuration, style guide implementation, GitHub/Vercel/Expo setup, and skills/tools validation.",
+  "author": {
+    "name": "Monlak"
+  }
+}
