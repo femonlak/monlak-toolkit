@@ -1,10 +1,10 @@
 ---
-name: frontend-design
+name: frontend-expert
 description: |
   Create production-grade frontend applications with exceptional UX/UI quality for web (React) and mobile (React Native/Expo). Use PROACTIVELY when: (1) Building UI components or pages, (2) Implementing interactions, animations, or micro-interactions, (3) Working with React or React Native, (4) Designing component APIs or design systems, (5) Implementing mobile-specific patterns (gestures, haptics, bottom sheets), (6) Making cross-platform architecture decisions, (7) Creating distinctive visual designs that avoid generic AI aesthetics, (8) Any frontend task where UX quality matters.
 ---
 
-# Frontend Design
+# Frontend Expert
 
 Build interfaces with the quality of top tech companies. Minimalist, purposeful, accessible.
 

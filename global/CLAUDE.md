@@ -30,7 +30,7 @@ Instruções globais que se aplicam a todos os projetos do Felipe.
 
 ## Skills Reference
 
-### frontend-design
+### frontend-expert
 Use PROACTIVELY when:
 - Building UI components or pages
 - Implementing interactions, animations, or micro-interactions
