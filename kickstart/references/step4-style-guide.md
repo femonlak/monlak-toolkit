@@ -60,140 +60,764 @@ Review what was chosen:
 
 ### Path A: Shadcn + Tailwind (Web)
 
-**Tool**: [Tweak.cn Theme Editor](https://tweakcn.com/editor/theme)
+**Approach**: Use structured CSS variables system with comprehensive theming
 
-#### 4.1A.1: Open Theme Editor
+Shadcn uses CSS variables for theming with light/dark mode support.
 
-1. Navigate to https://tweakcn.com/editor/theme
-2. You'll see a visual editor with color pickers
+**Skip Tweak.cn** - Use this proven structure directly in `globals.css`:
 
-#### 4.1A.2: Define Brand Colors
+#### 4.1A.1: Add Theme to globals.css
 
-**Primary Color**:
-- Choose your main brand color
-- This becomes your primary buttons, links, accents
-- Examples: Blue (#3B82F6), Purple (#8B5CF6), Green (#10B981)
+Replace content in `src/app/globals.css` (or `src/styles/globals.css`):
 
-**Radius**:
-- Border radius for components
-- Options: 0 (sharp), 0.3rem (slightly rounded), 0.5rem (rounded), 0.75rem (very rounded)
-- Recommendation: 0.5rem for modern look
-
-**Background & Text**:
-- Usually keep defaults
-- Background: Light (#FFFFFF) / Dark (#09090B)
-- Foreground (text): Dark (#09090B) / Light (#FAFAFA)
-
-**Additional Colors**:
-- Secondary (muted interactions)
-- Accent (highlights)
-- Destructive (errors, delete actions)
-- Muted (less prominent elements)
-
-#### 4.1A.3: Test Theme
-
-Use the preview components on the right:
-- Buttons
-- Cards
-- Input fields
-- Check light and dark modes
-
-#### 4.1A.4: Export Theme
-
-1. Click "Export" or "Copy Code"
-2. You'll get CSS variables for `globals.css`
-3. Copy the entire output
-
-**Example Output**:
 ```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    /* ... more variables ... */
+    /* Background & Foreground */
+    --background: #faf9f5;
+    --foreground: #3d3929;
+    
+    /* Card */
+    --card: #faf9f5;
+    --card-foreground: #1a1a19;
+    
+    /* Popover */
+    --popover: #ffffff;
+    --popover-foreground: #28261b;
+    
+    /* Primary - CUSTOMIZE THIS */
+    --primary: #c41ca5;
+    --primary-foreground: #ffffff;
+    
+    /* Secondary */
+    --secondary: #e9e6dc;
+    --secondary-foreground: #535146;
+    
+    /* Muted */
+    --muted: #ede9de;
+    --muted-foreground: #83827d;
+    
+    /* Accent */
+    --accent: #e9e6dc;
+    --accent-foreground: #28261b;
+    
+    /* Destructive */
+    --destructive: #1a1a19;
+    --destructive-foreground: #ffffff;
+    
+    /* Border & Input */
+    --border: #dad9d4;
+    --input: #b4b2a7;
+    --ring: #1f4e7a;
+    
+    /* Chart Colors */
+    --chart-1: #1f4e7a;
+    --chart-2: #368ad9;
+    --chart-3: #ded8c4;
+    --chart-4: #dbd3f0;
+    --chart-5: #b4552d;
+    
+    /* Sidebar */
+    --sidebar: #f5f4ee;
+    --sidebar-foreground: #3d3d3a;
+    --sidebar-primary: #c96442;
+    --sidebar-primary-foreground: #fbfbfb;
+    --sidebar-accent: #e9e6dc;
+    --sidebar-accent-foreground: #343434;
+    --sidebar-border: #ebebeb;
+    --sidebar-ring: #b5b5b5;
+    
+    /* Typography */
+    --font-sans: Albert Sans, ui-sans-serif, sans-serif, system-ui;
+    --font-serif: Adamina, ui-serif, serif;
+    --font-mono: Cousine, ui-monospace, monospace;
+    
+    /* Radius */
+    --radius: 0.4rem;
+    
+    /* Shadows */
+    --shadow-x: 0;
+    --shadow-y: 0px;
+    --shadow-blur: 0px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.1;
+    --shadow-color: oklch(0 0 0);
+    --shadow-2xs: 0 0px 0px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 0px 0px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 0px 0px 0px hsl(0 0% 0% / 0.25);
+    
+    /* Spacing & Tracking */
+    --tracking-normal: 0em;
+    --spacing: 0.3rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    /* ... dark mode variables ... */
+    /* Background & Foreground */
+    --background: #262624;
+    --foreground: #c3c0b6;
+    
+    /* Card */
+    --card: #262624;
+    --card-foreground: #faf9f5;
+    
+    /* Popover */
+    --popover: #30302e;
+    --popover-foreground: #e5e5e2;
+    
+    /* Primary - CUSTOMIZE THIS */
+    --primary: #c60ca3;
+    --primary-foreground: #ffffff;
+    
+    /* Secondary */
+    --secondary: #faf9f5;
+    --secondary-foreground: #30302e;
+    
+    /* Muted */
+    --muted: #1b1b19;
+    --muted-foreground: #b7b5a9;
+    
+    /* Accent */
+    --accent: #1c1b17;
+    --accent-foreground: #f5f4ee;
+    
+    /* Destructive */
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    
+    /* Border & Input */
+    --border: #3e3e38;
+    --input: #52514a;
+    --ring: #327abd;
+    
+    /* Chart Colors */
+    --chart-1: #327abd;
+    --chart-2: #9c87f5;
+    --chart-3: #1c1b17;
+    --chart-4: #2f2b48;
+    --chart-5: #b4552d;
+    
+    /* Sidebar */
+    --sidebar: #1f1e1d;
+    --sidebar-foreground: #c3c0b6;
+    --sidebar-primary: #343434;
+    --sidebar-primary-foreground: #fbfbfb;
+    --sidebar-accent: #1a1a19;
+    --sidebar-accent-foreground: #c3c0b6;
+    --sidebar-border: #ebebeb;
+    --sidebar-ring: #b5b5b5;
+    
+    /* Typography */
+    --font-sans: Albert Sans, ui-sans-serif, sans-serif, system-ui;
+    --font-serif: Adamina, ui-serif, serif;
+    --font-mono: Cousine, ui-monospace, monospace;
+    
+    /* Radius */
+    --radius: 0.4rem;
+    
+    /* Shadows (same structure as light) */
+    --shadow-x: 0;
+    --shadow-y: 0px;
+    --shadow-blur: 0px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.1;
+    --shadow-color: oklch(0 0 0);
+    --shadow-2xs: 0 0px 0px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 0px 0px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 0px 0px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 0px 0px 0px hsl(0 0% 0% / 0.25);
   }
+}
+
+@theme inline {
+  /* Color aliases for Tailwind */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Font aliases */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  /* Radius aliases */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Shadow aliases */
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
 }
 ```
 
+#### 4.1A.2: Customize Brand Colors
+
+**What to change**:
+
+1. **Primary color** (your brand):
+   ```css
+   /* Light mode */
+   --primary: #c41ca5;  /* Replace with your brand color */
+   
+   /* Dark mode */
+   .dark {
+     --primary: #c60ca3;  /* Slightly adjusted for dark background */
+   }
+   ```
+
+2. **Ring color** (focus states):
+   ```css
+   --ring: #1f4e7a;  /* Match or complement primary */
+   ```
+
+3. **Chart colors** (if using charts):
+   - `--chart-1` through `--chart-5`
+   - Keep distinct and accessible
+   - Example: Different shades of your brand color
+
+4. **Sidebar colors** (if using sidebar):
+   - `--sidebar-primary`: Sidebar brand color
+   - `--sidebar-accent`: Sidebar highlights
+   - Match main theme
+
+5. **Fonts** (optional):
+   ```css
+   --font-sans: Your Font, ui-sans-serif, sans-serif, system-ui;
+   --font-serif: Your Serif, ui-serif, serif;
+   --font-mono: Your Mono, ui-monospace, monospace;
+   ```
+
+6. **Radius** (optional):
+   ```css
+   --radius: 0.4rem;  /* 0 = sharp, 0.75rem = very rounded */
+   ```
+
+**What NOT to change**:
+- Variable naming structure
+- :root and .dark structure
+- @theme inline section (needed for Tailwind)
+- Shadow system structure
+- Semantic color relationships (foreground colors)
+
+#### 4.1A.3: Example Customization
+
+**For a blue brand**:
+
+```css
+:root {
+  /* Primary becomes blue */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  
+  /* Ring matches (for focus states) */
+  --ring: #3b82f6;
+  
+  /* Charts use blue palette */
+  --chart-1: #1e40af;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #93c5fd;
+  --chart-5: #dbeafe;
+  
+  /* Sidebar matches */
+  --sidebar-primary: #3b82f6;
+  
+  /* Rest stays the same */
+  --background: #faf9f5;
+  --foreground: #3d3929;
+  --card: #faf9f5;
+  /* ... */
+}
+
+.dark {
+  /* Primary blue for dark mode */
+  --primary: #60a5fa;  /* Lighter blue for dark background */
+  --primary-foreground: #ffffff;
+  
+  /* Ring matches */
+  --ring: #60a5fa;
+  
+  /* Charts adjusted for dark */
+  --chart-1: #60a5fa;
+  --chart-2: #3b82f6;
+  --chart-3: #1e40af;
+  --chart-4: #1e3a8a;
+  --chart-5: #172554;
+  
+  /* Sidebar adjusted */
+  --sidebar-primary: #60a5fa;
+  
+  /* Rest stays the same */
+  --background: #262624;
+  --foreground: #c3c0b6;
+  /* ... */
+}
+```
+
+#### 4.1A.4: Update tailwind.config.ts
+
+Ensure Tailwind configuration references these CSS variables.
+
+Create or update `tailwind.config.ts`:
+
+```typescript
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  darkMode: ['class'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        destructive: {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+        chart: {
+          '1': 'var(--chart-1)',
+          '2': 'var(--chart-2)',
+          '3': 'var(--chart-3)',
+          '4': 'var(--chart-4)',
+          '5': 'var(--chart-5)',
+        },
+        sidebar: {
+          DEFAULT: 'var(--sidebar)',
+          foreground: 'var(--sidebar-foreground)',
+          primary: 'var(--sidebar-primary)',
+          'primary-foreground': 'var(--sidebar-primary-foreground)',
+          accent: 'var(--sidebar-accent)',
+          'accent-foreground': 'var(--sidebar-accent-foreground)',
+          border: 'var(--sidebar-border)',
+          ring: 'var(--sidebar-ring)',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)'],
+        mono: ['var(--font-mono)'],
+      },
+      boxShadow: {
+        '2xs': 'var(--shadow-2xs)',
+        xs: 'var(--shadow-xs)',
+        sm: 'var(--shadow-sm)',
+        DEFAULT: 'var(--shadow)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+        '2xl': 'var(--shadow-2xl)',
+      },
+    },
+  },
+  plugins: [],
+}
+
+export default config
+```
+
+**Key Points**:
+- `darkMode: ['class']` enables class-based dark mode
+- All colors reference CSS variables from globals.css
+- Chart colors accessible as `chart-1` through `chart-5`
+- Sidebar colors included for sidebar components
+- Radius, fonts, shadows also from variables
+
+
+
 ### Path B: Tamagui (Mobile)
 
-**Tool**: [Tamagui Theme Studio](https://tamagui.dev/theme)
+**Approach**: Use structured theme system with separate themes file
 
-#### 4.1B.1: Open Theme Studio
+Tamagui uses a builder-based approach with 12-shade palettes and semantic themes.
 
-1. Navigate to https://tamagui.dev/theme
-2. You'll see Tamagui's theme builder interface
+**Structure**: Two-file setup (themes.ts + tamagui.config.ts)
 
-#### 4.1B.2: Choose Base Theme
+#### 4.1B.1: Create Theme File
 
-**Options**:
-- Light
-- Dark
-- Base (neutral starting point)
+Create `themes.ts` in project root:
 
-**Recommendation**: Start with Base, customize from there
-
-#### 4.1B.3: Define Colors
-
-**Brand Colors**:
-- Primary accent color
-- Background colors
-- Text colors
-
-**Semantic Colors**:
-- Success (green)
-- Warning (yellow)
-- Error (red)
-- Info (blue)
-
-**Shades**:
-- Tamagui uses numbered shades (1-12)
-- Lighter → Darker progression
-- More granular than Tailwind
-
-#### 4.1B.4: Configure Tokens
-
-**Spacing**:
-- Size tokens ($1, $2, $4, etc.)
-- Space tokens for padding/margin
-
-**Typography**:
-- Font sizes
-- Line heights
-- Font weights
-
-**Radius**:
-- Border radius values
-- Multiple options for different components
-
-#### 4.1B.5: Export Theme
-
-1. Click "Export" or "Copy Theme"
-2. You'll get TypeScript/JavaScript config
-3. Copy the theme object
-
-**Example Output**:
 ```typescript
-export const customTheme = {
-  light: {
-    background: '#ffffff',
-    color: '#000000',
-    primary: '#3B82F6',
-    // ... more tokens ...
+// themes.ts
+import { createThemes, defaultComponentThemes } from '@tamagui/theme-builder'
+import * as Colors from '@tamagui/colors'
+
+// Define your color palettes (12 shades each)
+// Customize these colors while keeping the structure
+const darkPalette = [
+  'hsla(0, 15%, 1%, 1)',
+  'hsla(0, 15%, 6%, 1)',
+  'hsla(0, 15%, 12%, 1)',
+  'hsla(0, 15%, 17%, 1)',
+  'hsla(0, 15%, 23%, 1)',
+  'hsla(0, 15%, 28%, 1)',
+  'hsla(0, 15%, 34%, 1)',
+  'hsla(0, 15%, 39%, 1)',
+  'hsla(0, 15%, 45%, 1)',
+  'hsla(0, 15%, 50%, 1)',
+  'hsla(0, 15%, 93%, 1)',
+  'hsla(0, 15%, 99%, 1)',
+]
+
+const lightPalette = [
+  'hsla(0, 15%, 99%, 1)',
+  'hsla(0, 15%, 94%, 1)',
+  'hsla(0, 15%, 88%, 1)',
+  'hsla(0, 15%, 83%, 1)',
+  'hsla(0, 15%, 77%, 1)',
+  'hsla(0, 15%, 72%, 1)',
+  'hsla(0, 15%, 66%, 1)',
+  'hsla(0, 15%, 61%, 1)',
+  'hsla(0, 15%, 55%, 1)',
+  'hsla(0, 15%, 50%, 1)',
+  'hsla(0, 15%, 15%, 1)',
+  'hsla(0, 15%, 1%, 1)',
+]
+
+// Shadow definitions
+const lightShadows = {
+  shadow1: 'rgba(0,0,0,0.04)',
+  shadow2: 'rgba(0,0,0,0.08)',
+  shadow3: 'rgba(0,0,0,0.16)',
+  shadow4: 'rgba(0,0,0,0.24)',
+  shadow5: 'rgba(0,0,0,0.32)',
+  shadow6: 'rgba(0,0,0,0.4)',
+}
+
+const darkShadows = {
+  shadow1: 'rgba(0,0,0,0.2)',
+  shadow2: 'rgba(0,0,0,0.3)',
+  shadow3: 'rgba(0,0,0,0.4)',
+  shadow4: 'rgba(0,0,0,0.5)',
+  shadow5: 'rgba(0,0,0,0.6)',
+  shadow6: 'rgba(0,0,0,0.7)',
+}
+
+// Create themes with structured approach
+const builtThemes = createThemes({
+  componentThemes: defaultComponentThemes,
+
+  // Base theme (neutral)
+  base: {
+    palette: {
+      dark: darkPalette,
+      light: lightPalette,
+    },
+    extra: {
+      light: {
+        ...Colors.green,
+        ...Colors.red,
+        ...Colors.yellow,
+        ...lightShadows,
+        shadowColor: lightShadows.shadow1,
+      },
+      dark: {
+        ...Colors.greenDark,
+        ...Colors.redDark,
+        ...Colors.yellowDark,
+        ...darkShadows,
+        shadowColor: darkShadows.shadow1,
+      },
+    },
   },
-  dark: {
-    background: '#000000',
-    color: '#ffffff',
-    primary: '#60A5FA',
-    // ... more tokens ...
+
+  // Accent theme (primary brand color)
+  // CUSTOMIZE THESE COLORS
+  accent: {
+    palette: {
+      dark: [
+        'hsla(340, 100%, 63%, 1)',
+        'hsla(340, 100%, 62%, 1)',
+        'hsla(340, 100%, 62%, 1)',
+        'hsla(340, 100%, 62%, 1)',
+        'hsla(340, 100%, 61%, 1)',
+        'hsla(340, 100%, 61%, 1)',
+        'hsla(340, 100%, 61%, 1)',
+        'hsla(340, 100%, 61%, 1)',
+        'hsla(340, 100%, 60%, 1)',
+        'hsla(340, 100%, 60%, 1)',
+        'hsla(250, 50%, 90%, 1)',
+        'hsla(250, 50%, 95%, 1)',
+      ],
+      light: [
+        'hsla(340, 100%, 38%, 1)',
+        'hsla(340, 100%, 41%, 1)',
+        'hsla(340, 100%, 44%, 1)',
+        'hsla(340, 100%, 47%, 1)',
+        'hsla(340, 100%, 50%, 1)',
+        'hsla(340, 100%, 53%, 1)',
+        'hsla(340, 100%, 56%, 1)',
+        'hsla(340, 100%, 59%, 1)',
+        'hsla(340, 100%, 62%, 1)',
+        'hsla(340, 100%, 65%, 1)',
+        'hsla(250, 50%, 95%, 1)',
+        'hsla(250, 50%, 95%, 1)',
+      ],
+    },
+  },
+
+  // Sub-themes for semantic colors
+  childrenThemes: {
+    warning: {
+      palette: {
+        dark: Object.values(Colors.yellowDark),
+        light: Object.values(Colors.yellow),
+      },
+    },
+    error: {
+      palette: {
+        dark: Object.values(Colors.redDark),
+        light: Object.values(Colors.red),
+      },
+    },
+    success: {
+      palette: {
+        dark: Object.values(Colors.greenDark),
+        light: Object.values(Colors.green),
+      },
+    },
+  },
+
+  // Optionally add more sub-themes if needed
+  // grandChildrenThemes: {
+  //   alt1: {
+  //     template: 'alt1',
+  //   },
+  //   alt2: {
+  //     template: 'alt2',
+  //   },
+  //   surface1: {
+  //     template: 'surface1',
+  //   },
+  //   surface2: {
+  //     template: 'surface2',
+  //   },
+  //   surface3: {
+  //     template: 'surface3',
+  //   },
+  // },
+})
+
+export type Themes = typeof builtThemes
+
+// Client-side optimization: saves bundle size by leaving out themes JS
+// Tamagui automatically hydrates themes from CSS back into JS
+// This conditional is optional but recommended for production
+export const themes: Themes =
+  process.env.TAMAGUI_ENVIRONMENT === 'client' &&
+  process.env.NODE_ENV === 'production'
+    ? ({} as any)
+    : (builtThemes as any)
+```
+
+#### 4.1B.2: Create Config File
+
+Create `tamagui.config.ts` in project root:
+
+```typescript
+// tamagui.config.ts
+import { createTamagui } from '@tamagui/core'
+import { defaultConfig } from '@tamagui/config/v4'
+import { themes } from './themes'
+
+export const config = createTamagui({
+  ...defaultConfig,
+  themes,
+})
+
+export default config
+
+export type Conf = typeof config
+
+declare module '@tamagui/core' {
+  interface TamaguiCustomConfig extends Conf {}
+}
+```
+
+**Key Points**:
+- Themes are in separate file (`themes.ts`)
+- Config imports themes and merges with `defaultConfig`
+- Uses `@tamagui/config/v4` for latest defaults
+- TypeScript module declaration for type safety
+
+#### 4.1B.3: Customize Brand Colors
+
+**What to change in `themes.ts`**:
+
+1. **Base palette** (darkPalette & lightPalette):
+   - Change hue (first number in `hsla()`)
+   - Keep saturation and lightness progression
+   - Example: Blue = `hsla(220, ...)` instead of `hsla(0, ...)`
+
+2. **Accent palette**:
+   - Your primary brand color
+   - Example provided: Pink (`hsla(340, 100%, ...)`)
+   - Replace with your brand color
+   - Keep the shade progression structure
+
+3. **Shadows** (optional):
+   - Adjust opacity values if needed
+   - Keep the 6-level system
+
+**What NOT to change**:
+- Number of shades (must be 12)
+- Structure (base, accent, childrenThemes)
+- Component themes (use defaultComponentThemes)
+- Semantic colors (warning, error, success)
+- Client-side optimization logic
+- Export structure
+
+#### 4.1B.4: Example Customization
+
+**For a blue brand**, update `themes.ts`:
+
+```typescript
+const darkPalette = [
+  'hsla(220, 15%, 1%, 1)',   // Changed hue to 220 (blue)
+  'hsla(220, 15%, 6%, 1)',
+  'hsla(220, 15%, 12%, 1)',
+  'hsla(220, 15%, 17%, 1)',
+  'hsla(220, 15%, 23%, 1)',
+  'hsla(220, 15%, 28%, 1)',
+  'hsla(220, 15%, 34%, 1)',
+  'hsla(220, 15%, 39%, 1)',
+  'hsla(220, 15%, 45%, 1)',
+  'hsla(220, 15%, 50%, 1)',
+  'hsla(220, 15%, 93%, 1)',
+  'hsla(220, 15%, 99%, 1)',
+]
+
+const lightPalette = [
+  'hsla(220, 15%, 99%, 1)',
+  'hsla(220, 15%, 94%, 1)',
+  'hsla(220, 15%, 88%, 1)',
+  'hsla(220, 15%, 83%, 1)',
+  'hsla(220, 15%, 77%, 1)',
+  'hsla(220, 15%, 72%, 1)',
+  'hsla(220, 15%, 66%, 1)',
+  'hsla(220, 15%, 61%, 1)',
+  'hsla(220, 15%, 55%, 1)',
+  'hsla(220, 15%, 50%, 1)',
+  'hsla(220, 15%, 15%, 1)',
+  'hsla(220, 15%, 1%, 1)',
+]
+
+// Accent becomes blue
+accent: {
+  palette: {
+    dark: [
+      'hsla(220, 85%, 65%, 1)',  // Blue in dark mode
+      'hsla(220, 85%, 64%, 1)',
+      'hsla(220, 85%, 63%, 1)',
+      'hsla(220, 85%, 62%, 1)',
+      'hsla(220, 85%, 61%, 1)',
+      'hsla(220, 85%, 60%, 1)',
+      'hsla(220, 85%, 59%, 1)',
+      'hsla(220, 85%, 58%, 1)',
+      'hsla(220, 85%, 57%, 1)',
+      'hsla(220, 85%, 56%, 1)',
+      'hsla(220, 50%, 90%, 1)',
+      'hsla(220, 50%, 95%, 1)',
+    ],
+    light: [
+      'hsla(220, 85%, 40%, 1)',  // Blue in light mode
+      'hsla(220, 85%, 43%, 1)',
+      'hsla(220, 85%, 46%, 1)',
+      'hsla(220, 85%, 49%, 1)',
+      'hsla(220, 85%, 52%, 1)',
+      'hsla(220, 85%, 55%, 1)',
+      'hsla(220, 85%, 58%, 1)',
+      'hsla(220, 85%, 61%, 1)',
+      'hsla(220, 85%, 64%, 1)',
+      'hsla(220, 85%, 67%, 1)',
+      'hsla(220, 50%, 95%, 1)',
+      'hsla(220, 50%, 95%, 1)',
+    ],
   },
 }
 ```
@@ -242,67 +866,155 @@ Define at minimum:
 
 ### For Shadcn + Tailwind
 
-#### Update globals.css
+Theme CSS already created in Step 4.1A. Now verify and test implementation.
 
-Replace the CSS variables section in `src/app/globals.css` (or `src/styles/globals.css`):
+#### Verify Files Exist
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+Check that both files are configured:
 
-@layer base {
-  :root {
-    /* Paste exported CSS variables from Tweak.cn here */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
+1. **globals.css** with CSS variables:
+```bash
+# Check file exists
+cat src/app/globals.css
+# or
+cat src/styles/globals.css
+```
 
-  .dark {
-    /* Paste dark mode variables here */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-}
+Should contain `:root`, `.dark`, and `@theme inline` sections.
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+2. **tailwind.config.ts** with variable references:
+```bash
+cat tailwind.config.ts
+```
+
+Should have `theme.extend.colors` pointing to CSS variables.
+
+#### Test Dark Mode Toggle
+
+Add dark mode toggle to test:
+
+```typescript
+// components/ThemeToggle.tsx
+'use client'
+
+import { useEffect, useState } from 'react'
+
+export function ThemeToggle() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.remove('light', 'dark')
+    root.classList.add(theme)
+  }, [theme])
+
+  return (
+    <button
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      className="px-4 py-2 rounded-lg bg-primary text-primary-foreground"
+    >
+      Toggle to {theme === 'light' ? 'Dark' : 'Light'}
+    </button>
+  )
 }
 ```
 
-#### Test Implementation
+#### Test Theme Components
+
+Create test component to verify all theme colors:
+
+```typescript
+// components/ThemeTest.tsx
+import { ThemeToggle } from './ThemeToggle'
+
+export function ThemeTest() {
+  return (
+    <div className="p-8 space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Theme Test</h1>
+        <ThemeToggle />
+      </div>
+
+      {/* Background & Foreground */}
+      <div className="p-4 bg-background text-foreground border border-border rounded-lg">
+        Background & Foreground
+      </div>
+
+      {/* Card */}
+      <div className="p-4 bg-card text-card-foreground border border-border rounded-lg">
+        Card
+      </div>
+
+      {/* Primary */}
+      <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg">
+        Primary Button
+      </button>
+
+      {/* Secondary */}
+      <button className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg">
+        Secondary Button
+      </button>
+
+      {/* Muted */}
+      <div className="p-4 bg-muted text-muted-foreground rounded-lg">
+        Muted Section
+      </div>
+
+      {/* Accent */}
+      <div className="p-4 bg-accent text-accent-foreground rounded-lg">
+        Accent Section
+      </div>
+
+      {/* Destructive */}
+      <button className="px-4 py-2 bg-destructive text-destructive-foreground rounded-lg">
+        Destructive Button
+      </button>
+
+      {/* Input */}
+      <input
+        type="text"
+        placeholder="Input field"
+        className="px-4 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring"
+      />
+
+      {/* Chart colors */}
+      <div className="flex gap-4">
+        <div className="w-16 h-16 bg-chart-1 rounded-lg" />
+        <div className="w-16 h-16 bg-chart-2 rounded-lg" />
+        <div className="w-16 h-16 bg-chart-3 rounded-lg" />
+        <div className="w-16 h-16 bg-chart-4 rounded-lg" />
+        <div className="w-16 h-16 bg-chart-5 rounded-lg" />
+      </div>
+
+      {/* Shadows */}
+      <div className="flex gap-4">
+        <div className="w-24 h-24 shadow-sm bg-card rounded-lg" />
+        <div className="w-24 h-24 shadow-md bg-card rounded-lg" />
+        <div className="w-24 h-24 shadow-lg bg-card rounded-lg" />
+        <div className="w-24 h-24 shadow-xl bg-card rounded-lg" />
+      </div>
+    </div>
+  )
+}
+```
+
+Use in your app to verify all theme elements.
+
+#### Verify Implementation Checklist
+
+- ✅ **CSS variables**: All defined in globals.css
+- ✅ **Dark mode**: .dark class toggles correctly
+- ✅ **Tailwind config**: References CSS variables
+- ✅ **Primary color**: Your brand color applied
+- ✅ **Secondary colors**: All semantic colors work
+- ✅ **Chart colors**: 5 distinct colors for data viz
+- ✅ **Sidebar colors**: If using sidebar components
+- ✅ **Fonts**: Custom fonts loading (if changed)
+- ✅ **Radius**: Border radius applied consistently
+- ✅ **Shadows**: Shadow levels working
+- ✅ **Inputs**: Focus ring appears correctly
+- ✅ **No TypeScript errors**: Config types correct
+- ✅ **Hot reload**: Changes reflect in dev server
 
 Restart dev server and check:
 - Colors applied correctly
@@ -311,58 +1023,119 @@ Restart dev server and check:
 
 ### For Tamagui
 
-#### Update tamagui.config.ts
+Configuration already created in Step 4.1B with two files:
+- `themes.ts` - Theme definitions
+- `tamagui.config.ts` - Config that imports themes
 
-Replace or extend theme in your config:
+Now integrate with app.
 
-```typescript
-import { createTamagui, createTokens } from 'tamagui'
-import { config as defaultConfig } from '@tamagui/config/v3'
+#### Verify Files Exist
 
-// Paste exported theme from Tamagui Studio
-const customTheme = {
-  light: {
-    background: '#ffffff',
-    color: '#000000',
-    primary: '#3B82F6',
-    secondary: '#6B7280',
-    // ... your custom colors
-  },
-  dark: {
-    background: '#000000',
-    color: '#ffffff',
-    primary: '#60A5FA',
-    secondary: '#9CA3AF',
-    // ... your custom dark colors
-  },
-}
-
-const tokens = createTokens({
-  ...defaultConfig.tokens,
-  color: {
-    ...defaultConfig.tokens.color,
-    ...customTheme.light,
-  },
-})
-
-const tamaguiConfig = createTamagui({
-  ...defaultConfig,
-  tokens,
-  themes: {
-    light: customTheme.light,
-    dark: customTheme.dark,
-  },
-})
-
-export default tamaguiConfig
+Check that both files are in project root:
+```bash
+ls themes.ts tamagui.config.ts
 ```
 
-#### Test Implementation
+Should show both files.
 
-Restart and verify:
-- Colors applied to components
-- Theme switching works
-- No TypeScript errors
+#### Apply to App Root
+
+**For Expo (app/_layout.tsx)**:
+```typescript
+import { TamaguiProvider } from 'tamagui'
+import { config } from '../tamagui.config'
+import { useFonts } from 'expo-font'
+
+export default function RootLayout() {
+  const [loaded] = useFonts({
+    // your fonts
+  })
+
+  if (!loaded) {
+    return null
+  }
+
+  return (
+    <TamaguiProvider config={config}>
+      {/* Your app content */}
+    </TamaguiProvider>
+  )
+}
+```
+
+**For React Native (App.tsx)**:
+```typescript
+import { TamaguiProvider } from 'tamagui'
+import { config } from './tamagui.config'
+
+export default function App() {
+  return (
+    <TamaguiProvider config={config}>
+      {/* Your app content */}
+    </TamaguiProvider>
+  )
+}
+```
+
+#### Test Theme Implementation
+
+Create test component to verify:
+
+```typescript
+// components/ThemeTest.tsx
+import { Button, H1, YStack } from 'tamagui'
+
+export function ThemeTest() {
+  return (
+    <YStack padding="$4" space="$4">
+      <H1>Theme Test</H1>
+      
+      {/* Base theme */}
+      <Button>Base Button</Button>
+      
+      {/* Accent theme */}
+      <Button theme="accent">Accent Button</Button>
+      
+      {/* Semantic themes */}
+      <Button theme="success">Success</Button>
+      <Button theme="warning">Warning</Button>
+      <Button theme="error">Error</Button>
+    </YStack>
+  )
+}
+```
+
+Use in your app to verify all themes work correctly.
+
+#### Test Theme Switching (Dark/Light)
+
+```typescript
+import { useColorScheme } from 'react-native'
+import { TamaguiProvider } from 'tamagui'
+import { config } from './tamagui.config'
+
+export default function App() {
+  const colorScheme = useColorScheme() // 'light' or 'dark'
+
+  return (
+    <TamaguiProvider
+      config={config}
+      defaultTheme={colorScheme}
+    >
+      {/* Your app */}
+    </TamaguiProvider>
+  )
+}
+```
+
+Verify:
+- ✅ Light mode uses light palette
+- ✅ Dark mode uses dark palette
+- ✅ Switching between modes works
+- ✅ All semantic themes (success, warning, error) render correctly
+- ✅ Shadows appear properly
+- ✅ No TypeScript errors
+- ✅ Client-side optimization active in production build
 
 ### For Other Frameworks
 
