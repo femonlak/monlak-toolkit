@@ -16,6 +16,8 @@ Instalar plugins específicos:
 /plugin install supabase-expert@femonlak-monlak-toolkit
 /plugin install frontend-expert@femonlak-monlak-toolkit
 /plugin install kickstart@femonlak-monlak-toolkit
+/plugin install last30days@femonlak-monlak-toolkit
+/plugin install agentation@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -28,6 +30,8 @@ Instalar plugins específicos:
 | supabase-expert | Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices | trabalho com database, backend, Supabase, migrations, RLS policies |
 | frontend-expert | Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform | building UI components, React, React Native, design system, animações, mobile patterns |
 | kickstart | Inicializar projetos com tech stack completo (web/mobile), Supabase, style guide, GitHub/Vercel/Expo e validação de tools | "kickstart this project", "iniciar projeto", "use kickstart skill" |
+| last30days | Pesquisa tópicos no Reddit + X + Web dos últimos 30 dias, sintetiza insights e gera prompts copy-paste | "/last30days [tópico]", "pesquisar sobre X nos últimos 30 dias" |
+| agentation | Ferramenta visual de feedback para AI agents - captura seletores CSS e posições de elementos | projetos web com React/Next.js para melhor assistência de AI agents |
 
 ## Slash Commands
 
@@ -108,6 +112,22 @@ monlak-toolkit/
 │       ├── step6-vercel-deployment.md
 │       ├── step7-expo-deployment.md
 │       └── step8-tools-validation.md
+├── last30days/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── last30days/
+│           ├── SKILL.md
+│           ├── scripts/
+│           │   ├── last30days.py
+│           │   └── lib/
+│           └── fixtures/
+├── agentation/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── agentation/
+│           └── SKILL.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

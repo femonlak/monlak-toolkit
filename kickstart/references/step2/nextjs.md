@@ -211,6 +211,99 @@ After setup, verify:
 4. **Linting**: `npm run lint` - should pass
 5. **Path aliases**: Import something using `@/` and verify it works
 
+## Agentation (AI Feedback Tool)
+
+Agentation is a visual feedback tool that helps AI coding agents find exact code locations. **Install in all web projects** for better AI-assisted development.
+
+### Installation
+
+```bash
+npm install agentation -D
+```
+
+### Setup
+
+Add to your root layout (development only):
+
+```typescript
+// src/app/layout.tsx
+import type { Metadata } from 'next'
+import './globals.css'
+
+// Only import in development
+const Agentation = process.env.NODE_ENV === 'development'
+  ? require('agentation').Agentation
+  : () => null
+
+export const metadata: Metadata = {
+  title: 'Your App Name',
+  description: 'Your app description',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Agentation />
+      </body>
+    </html>
+  )
+}
+```
+
+### Alternative: Separate Component
+
+Create `src/components/dev-tools.tsx`:
+
+```typescript
+'use client'
+
+import dynamic from 'next/dynamic'
+
+const Agentation = dynamic(
+  () => import('agentation').then((mod) => mod.Agentation),
+  { ssr: false }
+)
+
+export function DevTools() {
+  if (process.env.NODE_ENV !== 'development') return null
+  return <Agentation />
+}
+```
+
+Then add to layout:
+
+```typescript
+import { DevTools } from '@/components/dev-tools'
+
+// In body:
+{children}
+<DevTools />
+```
+
+### How It Helps
+
+When working with Claude Code or other AI agents:
+1. Click any element to capture its CSS selector
+2. Add notes about what you want changed
+3. Copy structured output with selectors, positions, and context
+4. AI agent can grep for exact code locations
+
+### Verification
+
+After setup:
+1. Run `npm run dev`
+2. Look for Agentation toolbar in bottom-right corner
+3. Click to activate, then click any element
+4. Verify annotation appears with selector info
+
+---
+
 ## Next Steps
 
 - If using Tailwind: Read `tailwind.md`

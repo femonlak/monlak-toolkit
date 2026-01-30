@@ -35,6 +35,7 @@ The kickstart process has **8 core steps**, always starting with analysis:
 - Set up environment variables and framework configs
 - Configure QueryClient and providers
 - Create documentation files
+- **Install Agentation** (web only) - AI feedback tool for better agent-assisted development
 
 **Step 3: Backend Setup** → See [step3-supabase-setup.md](references/step3-supabase-setup.md)
 - Create Supabase project via dashboard

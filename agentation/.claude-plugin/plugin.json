@@ -1,0 +1,7 @@
+{
+  "name": "agentation",
+  "version": "1.0.0",
+  "description": "Visual feedback tool for AI coding agents - click elements, add notes, copy structured output with CSS selectors",
+  "author": "benjitaylor (skill by monlak-toolkit)",
+  "skills": ["skills/agentation"]
+}

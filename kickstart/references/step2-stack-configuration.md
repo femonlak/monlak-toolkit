@@ -79,6 +79,7 @@ Based on Step 1 tech stack, read these files in order:
 - Layout structure
 - Scripts and tooling
 - Development server setup
+- **Agentation setup** (web only) - AI feedback tool for agent-assisted development
 
 ### UI System Configuration
 - Styling system setup

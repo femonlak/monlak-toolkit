@@ -1,0 +1,7 @@
+{
+  "name": "last30days",
+  "version": "1.0.0",
+  "description": "Research any topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts",
+  "author": "mvanhorn (adapted for monlak-toolkit)",
+  "skills": ["skills/last30days"]
+}
