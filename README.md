@@ -18,6 +18,7 @@ Instalar plugins específicos:
 /plugin install kickstart@femonlak-monlak-toolkit
 /plugin install last30days@femonlak-monlak-toolkit
 /plugin install agentation@femonlak-monlak-toolkit
+/plugin install bizdev@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -32,6 +33,7 @@ Instalar plugins específicos:
 | kickstart | Inicializar projetos com tech stack completo (web/mobile), Supabase, style guide, GitHub/Vercel/Expo e validação de tools | "kickstart this project", "iniciar projeto", "use kickstart skill" |
 | last30days | Pesquisa tópicos no Reddit + X + Web dos últimos 30 dias, sintetiza insights e gera prompts copy-paste | "/last30days [tópico]", "pesquisar sobre X nos últimos 30 dias" |
 | agentation | Ferramenta visual de feedback para AI agents - captura seletores CSS e posições de elementos | projetos web com React/Next.js para melhor assistência de AI agents |
+| bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
 
 ## Slash Commands
 
@@ -40,6 +42,10 @@ Instalar plugins específicos:
 | /fix | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
 | /git-sync | Sincronizar repositório local com remoto, apresentando plano antes de executar |
 | /enhance-feature | Adicionar melhoria incremental em feature existente |
+| /ataque | Plano de ataque comercial do dia |
+| /pipeline | Visualização do funil por projeto |
+| /diagnostico | Diagnóstico de saúde do pipeline (score 0-100) |
+| /update-pipeline | Gerar project update para o Linear |
 
 ## Extras
 
@@ -128,6 +134,22 @@ monlak-toolkit/
 │   └── skills/
 │       └── agentation/
 │           └── SKILL.md
+├── bizdev/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   ├── .mcp.json
+│   ├── skills/
+│   │   └── bizdev-helper/
+│   │       ├── SKILL.md
+│   │       └── references/
+│   │           ├── pipeline-context.md
+│   │           ├── pipeline-scoring.md
+│   │           └── pipeline-update.md
+│   └── commands/
+│       ├── ataque.md
+│       ├── diagnostico.md
+│       ├── pipeline.md
+│       └── update-pipeline.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/
