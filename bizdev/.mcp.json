@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "sse",
+      "url": "https://mcp.linear.app/sse"
+    },
+    "slack": {
+      "type": "http",
+      "url": "https://slack.mcp.claude.com/mcp"
+    }
+  }
+}

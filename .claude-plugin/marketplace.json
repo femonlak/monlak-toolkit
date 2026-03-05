@@ -38,6 +38,11 @@
       "name": "kickstart",
       "source": "./kickstart",
       "description": "Inicializar projetos com tech stack completo, configuração e ambiente de desenvolvimento"
+    },
+    {
+      "name": "bizdev",
+      "source": "./bizdev",
+      "description": "Business Development: coach comercial para pipeline de parceiros, diagnóstico de funil, plano de ataque diário e reporting"
     }
   ]
 }
