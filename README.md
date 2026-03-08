@@ -19,7 +19,6 @@ Instalar plugins específicos:
 /plugin install last30days@femonlak-monlak-toolkit
 /plugin install agentation@femonlak-monlak-toolkit
 /plugin install bizdev@femonlak-monlak-toolkit
-/plugin install boltr-mcp@femonlak-monlak-toolkit
 /plugin install frontend-slides@femonlak-monlak-toolkit
 ```
 
@@ -36,7 +35,6 @@ Instalar plugins específicos:
 | last30days | Pesquisa tópicos no Reddit + X + Web dos últimos 30 dias, sintetiza insights e gera prompts copy-paste | "/last30days [tópico]", "pesquisar sobre X nos últimos 30 dias" |
 | agentation | Ferramenta visual de feedback para AI agents - captura seletores CSS e posições de elementos | projetos web com React/Next.js para melhor assistência de AI agents |
 | bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
-| boltr-mcp | MCP Server + Skill para BOLTR Tasks: 25 tools para gerenciar tasks, lists, goals, focus sessions e sprints via IA | "gerenciar tasks", "o que tenho para hoje?", "criar sprint" |
 | frontend-slides | Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint, com 12 presets visuais | "create presentation", "convert pptx", "make slides", "/frontend-slides" |
 
 ## Slash Commands
@@ -154,29 +152,6 @@ monlak-toolkit/
 │       ├── diagnostico.md
 │       ├── pipeline.md
 │       └── update-pipeline.md
-├── boltr-mcp/
-│   ├── .claude-plugin/
-│   │   └── plugin.json
-│   ├── README.md
-│   ├── skills/
-│   │   └── boltr-mcp/
-│   │       └── SKILL.md
-│   └── mcp-server/
-│       ├── package.json
-│       ├── tsconfig.json
-│       └── src/
-│           ├── index.ts
-│           ├── config.ts
-│           ├── auth.ts
-│           ├── helpers.ts
-│           └── tools/
-│               ├── tasks.ts
-│               ├── subtasks.ts
-│               ├── lists.ts
-│               ├── goals.ts
-│               ├── recurrence.ts
-│               ├── focus.ts
-│               └── dashboard.ts
 ├── frontend-slides/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
