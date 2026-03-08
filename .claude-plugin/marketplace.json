@@ -48,6 +48,11 @@
       "name": "boltr-mcp",
       "source": "./boltr-mcp",
       "description": "BOLTR Tasks MCP Server: 25 tools para gerenciar tasks, lists, goals, focus sessions e sprints via IA"
+    },
+    {
+      "name": "frontend-slides",
+      "source": "./frontend-slides",
+      "description": "Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint"
     }
   ]
 }

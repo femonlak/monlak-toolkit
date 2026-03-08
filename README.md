@@ -20,6 +20,7 @@ Instalar plugins específicos:
 /plugin install agentation@femonlak-monlak-toolkit
 /plugin install bizdev@femonlak-monlak-toolkit
 /plugin install boltr-mcp@femonlak-monlak-toolkit
+/plugin install frontend-slides@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -36,6 +37,7 @@ Instalar plugins específicos:
 | agentation | Ferramenta visual de feedback para AI agents - captura seletores CSS e posições de elementos | projetos web com React/Next.js para melhor assistência de AI agents |
 | bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
 | boltr-mcp | MCP Server + Skill para BOLTR Tasks: 25 tools para gerenciar tasks, lists, goals, focus sessions e sprints via IA | "gerenciar tasks", "o que tenho para hoje?", "criar sprint" |
+| frontend-slides | Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint, com 12 presets visuais | "create presentation", "convert pptx", "make slides", "/frontend-slides" |
 
 ## Slash Commands
 
@@ -175,6 +177,19 @@ monlak-toolkit/
 │               ├── recurrence.ts
 │               ├── focus.ts
 │               └── dashboard.ts
+├── frontend-slides/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── frontend-slides/
+│           ├── SKILL.md
+│           └── references/
+│               ├── STYLE_PRESETS.md
+│               ├── viewport-base.css
+│               ├── html-template.md
+│               ├── animation-patterns.md
+│               └── scripts/
+│                   └── extract-pptx.py
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/
