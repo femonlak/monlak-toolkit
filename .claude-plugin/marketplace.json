@@ -7,17 +7,17 @@
     {
       "name": "deploy-vercel",
       "source": "./deploy-vercel",
-      "description": "Workflow completo de commit + deploy na Vercel com auto-recovery"
+      "description": "Workflow completo de commit + deploy na Vercel com auto-recovery + /git-sync"
     },
     {
       "name": "new-feature",
       "source": "./new-feature",
-      "description": "Orquestrar desenvolvimento completo de nova feature"
+      "description": "Orquestrar desenvolvimento de feature: ideação, UX/UI, data model, implementação + commands /fix e /enhance-feature"
     },
     {
-      "name": "my-commands",
-      "source": "./my-commands",
-      "description": "Comandos de desenvolvimento: /fix, /git-sync, /enhance-feature, /monlak-toolkit"
+      "name": "toolkit-meta",
+      "source": "./toolkit-meta",
+      "description": "Comando /monlak-toolkit para gerenciar o próprio monlak-toolkit (adicionar/atualizar plugins)"
     },
     {
       "name": "consulting",
@@ -32,7 +32,7 @@
     {
       "name": "frontend-expert",
       "source": "./frontend-expert",
-      "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform"
+      "description": "Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações, cross-platform e visual feedback com Agentation"
     },
     {
       "name": "kickstart",

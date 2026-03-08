@@ -37,9 +37,17 @@ monlak-toolkit/
 ```
 
 **Plugins existentes:**
-- `deploy-vercel/` - Skill de deploy
-- `new-feature/` - Skill de feature development
-- `my-commands/` - Todos os commands (destino padrão)
+- `deploy-vercel/` - Skill de deploy + command /git-sync
+- `new-feature/` - Skill de feature development + commands /fix e /enhance-feature
+- `consulting/` - Frameworks de consultoria
+- `supabase-expert/` - Especialista Supabase
+- `frontend-expert/` - Frontend React/RN + skill agentation
+- `kickstart/` - Inicialização de projetos
+- `last30days/` - Pesquisa nos últimos 30 dias
+- `bizdev/` - Business development + pipeline
+- `boltr-mcp/` - MCP Server BOLTR Tasks
+- `frontend-slides/` - Apresentações HTML
+- `toolkit-meta/` - Comando /monlak-toolkit (este plugin)
 
 ### Tipos de componentes suportados
 
@@ -74,7 +82,7 @@ Este componente será adicionado como plugin [**novo**/**atualização do existe
 
 **Ações que serão feitas:**
 - [Skills] Criar novo plugin `nome-da-skill` OU atualizar existente
-- [Commands] Adicionar em `my-commands/commands/` (ou plugin especificado por você)
+- [Commands] Adicionar no plugin temático mais relevante (perguntar ao usuário)
 - [Agents] Adicionar em plugin especificado por você
 - [Hooks] Adicionar em plugin especificado por você
 - Copiar arquivos para a estrutura correta
@@ -82,7 +90,7 @@ Este componente será adicionado como plugin [**novo**/**atualização do existe
 - Adicionar entrada no `.claude-plugin/marketplace.json` (se plugin novo)
 - Atualizar README.md com informações do componente
 
-**[Se for Command]** Qual plugin usar? (deixe em branco para `my-commands`)
+**[Se for Command]** Qual plugin usar? (sugerir o plugin temático mais relevante)
 **[Se for Agent]** Qual plugin usar? (nome do plugin ou deixe em branco para criar novo)
 **[Se for Hook]** Qual plugin usar? (nome do plugin ou deixe em branco para criar novo)
 
@@ -130,21 +138,19 @@ cp -r [caminho-origem]/references/* [plugin-name]/references/  # se houver
 
 #### Para Commands:
 ```bash
-# Commands vão SEMPRE para o plugin my-commands (padrão)
-# A não ser que o usuário especifique outro plugin
+# Commands vão para o plugin temático mais relevante
+# Sempre perguntar ao usuário qual plugin usar
 
-# Perguntar ao usuário na confirmação:
-# "Este command será adicionado em my-commands. 
-#  Quer usar outro plugin? (deixe em branco para my-commands)"
+# Sugerir o plugin mais relevante baseado no conteúdo:
+# - Commands de dev/debug → new-feature
+# - Commands de git/deploy → deploy-vercel
+# - Commands de gestão do toolkit → toolkit-meta
 
-mkdir -p my-commands/.claude-plugin
-mkdir -p my-commands/commands
+mkdir -p [plugin-escolhido]/.claude-plugin
+mkdir -p [plugin-escolhido]/commands
 
 # Copiar comando
-cp [caminho-origem] my-commands/commands/[nome].md
-
-# Nota: Se usuário especificar plugin diferente, 
-# usar: [plugin-especificado]/commands/[nome].md
+cp [caminho-origem] [plugin-escolhido]/commands/[nome].md
 ```
 
 #### Para Agents:
@@ -173,7 +179,7 @@ cp [caminho-origem] [plugin-name]/hooks/hooks.json
 
 **Nome do plugin baseado no tipo:**
 - Skills: nome da skill (ex: `kickstart` para kickstart.skill)
-- Commands: `my-commands` (padrão) ou plugin especificado pelo usuário
+- Commands: plugin temático mais relevante (perguntar ao usuário)
 - Agents: plugin especificado pelo usuário
 - Hooks: plugin especificado pelo usuário
 
@@ -363,11 +369,11 @@ O arquivo pode estar corrompido. Você quer que eu:
 
 → Analisa o arquivo
 → Identifica como Command chamado "fix"
-→ Verifica que "fix" já existe em my-commands/commands/
+→ Verifica que "fix" já existe em new-feature/commands/
 → Mostra diff das mudanças
 → Confirma com usuário se quer atualizar
-→ Atualiza arquivo em my-commands/commands/fix.md
-→ Incrementa versão do plugin my-commands
+→ Atualiza arquivo em new-feature/commands/fix.md
+→ Incrementa versão do plugin new-feature
 → Commit e push
 ```
 

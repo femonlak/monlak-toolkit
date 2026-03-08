@@ -11,13 +11,12 @@ Instalar plugins específicos:
 ```
 /plugin install deploy-vercel@femonlak-monlak-toolkit
 /plugin install new-feature@femonlak-monlak-toolkit
-/plugin install my-commands@femonlak-monlak-toolkit
+/plugin install toolkit-meta@femonlak-monlak-toolkit
 /plugin install consulting@femonlak-monlak-toolkit
 /plugin install supabase-expert@femonlak-monlak-toolkit
 /plugin install frontend-expert@femonlak-monlak-toolkit
 /plugin install kickstart@femonlak-monlak-toolkit
 /plugin install last30days@femonlak-monlak-toolkit
-/plugin install agentation@femonlak-monlak-toolkit
 /plugin install bizdev@femonlak-monlak-toolkit
 /plugin install frontend-slides@femonlak-monlak-toolkit
 ```
@@ -30,24 +29,24 @@ Instalar plugins específicos:
 | new-feature | Orquestra desenvolvimento de feature: Product → UX/UI → Data Model → Revisão → Implementação → Docs | "nova feature", "implementar feature" |
 | consulting | Frameworks de consultoria (McKinsey, BCG, Bain, Accenture) para problem-solving e análise estratégica | "análise estratégica", "framework de consultoria", "SWOT", "Porter", "market sizing" |
 | supabase-expert | Especialista Supabase: schema, migrations, RLS, realtime, Edge Functions e best practices | trabalho com database, backend, Supabase, migrations, RLS policies |
-| frontend-expert | Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações e cross-platform | building UI components, React, React Native, design system, animações, mobile patterns |
+| frontend-expert | Frontend de alta qualidade: React, React Native, design systems, UX/UI, animações, cross-platform e visual feedback com Agentation | building UI components, React, React Native, design system, animações, mobile patterns, agentation |
 | kickstart | Inicializar projetos com tech stack completo (web/mobile), Supabase, style guide, GitHub/Vercel/Expo e validação de tools | "kickstart this project", "iniciar projeto", "use kickstart skill" |
 | last30days | Pesquisa tópicos no Reddit + X + Web dos últimos 30 dias, sintetiza insights e gera prompts copy-paste | "/last30days [tópico]", "pesquisar sobre X nos últimos 30 dias" |
-| agentation | Ferramenta visual de feedback para AI agents - captura seletores CSS e posições de elementos | projetos web com React/Next.js para melhor assistência de AI agents |
 | bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
 | frontend-slides | Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint, com 12 presets visuais | "create presentation", "convert pptx", "make slides", "/frontend-slides" |
 
 ## Slash Commands
 
-| Comando | Descrição |
-| --- | --- |
-| /fix | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
-| /git-sync | Sincronizar repositório local com remoto, apresentando plano antes de executar |
-| /enhance-feature | Adicionar melhoria incremental em feature existente |
-| /ataque | Plano de ataque comercial do dia |
-| /pipeline | Visualização do funil por projeto |
-| /diagnostico | Diagnóstico de saúde do pipeline (score 0-100) |
-| /update-pipeline | Gerar project update para o Linear |
+| Comando | Plugin | Descrição |
+| --- | --- | --- |
+| /fix | new-feature | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
+| /enhance-feature | new-feature | Adicionar melhoria incremental em feature existente |
+| /git-sync | deploy-vercel | Sincronizar repositório local com remoto, apresentando plano antes de executar |
+| /monlak-toolkit | toolkit-meta | Adicionar ou atualizar arquivo no plugin monlak-toolkit |
+| /ataque | bizdev | Plano de ataque comercial do dia |
+| /pipeline | bizdev | Visualização do funil por projeto |
+| /diagnostico | bizdev | Diagnóstico de saúde do pipeline (score 0-100) |
+| /update-pipeline | bizdev | Gerar project update para o Linear |
 
 ## Extras
 
@@ -67,23 +66,25 @@ monlak-toolkit/
 ├── deploy-vercel/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
-│   └── skills/
-│       └── deploy/
-│           └── SKILL.md
+│   ├── skills/
+│   │   └── deploy/
+│   │       └── SKILL.md
+│   └── commands/
+│       └── git-sync.md
 ├── new-feature/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
-│   └── skills/
-│       └── workflow/
-│           ├── SKILL.md
-│           └── references/
-├── my-commands/
+│   ├── skills/
+│   │   └── workflow/
+│   │       ├── SKILL.md
+│   │       └── references/
+│   └── commands/
+│       ├── fix.md
+│       └── enhance-feature.md
+├── toolkit-meta/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   └── commands/
-│       ├── fix.md
-│       ├── git-sync.md
-│       ├── enhance-feature.md
 │       └── monlak-toolkit.md
 ├── consulting/
 │   ├── .claude-plugin/
@@ -104,9 +105,11 @@ monlak-toolkit/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   └── skills/
-│       └── frontend-expert/
-│           ├── SKILL.md
-│           └── references/
+│       ├── frontend-expert/
+│       │   ├── SKILL.md
+│       │   └── references/
+│       └── agentation/
+│           └── SKILL.md
 ├── kickstart/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
@@ -130,12 +133,6 @@ monlak-toolkit/
 │           │   ├── last30days.py
 │           │   └── lib/
 │           └── fixtures/
-├── agentation/
-│   ├── .claude-plugin/
-│   │   └── plugin.json
-│   └── skills/
-│       └── agentation/
-│           └── SKILL.md
 ├── bizdev/
 │   ├── .claude-plugin/
 │   │   └── plugin.json

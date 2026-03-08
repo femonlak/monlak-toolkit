@@ -1,5 +1,5 @@
 {
   "name": "deploy-vercel",
-  "description": "Workflow completo de commit + deploy na Vercel com auto-recovery",
-  "version": "1.0.0"
+  "description": "Workflow completo de commit + deploy na Vercel com auto-recovery + /git-sync",
+  "version": "1.1.0"
 }

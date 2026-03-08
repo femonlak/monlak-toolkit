@@ -1,5 +1,5 @@
 {
   "name": "new-feature",
-  "description": "Orquestrar desenvolvimento completo de nova feature, desde ideação até implementação",
-  "version": "1.0.0"
+  "description": "Orquestrar desenvolvimento de feature: ideação, UX/UI, data model, implementação + commands /fix e /enhance-feature",
+  "version": "1.1.0"
 }
