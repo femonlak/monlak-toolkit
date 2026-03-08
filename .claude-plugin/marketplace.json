@@ -43,6 +43,11 @@
       "name": "bizdev",
       "source": "./bizdev",
       "description": "Business Development: coach comercial para pipeline de parceiros, diagnóstico de funil, plano de ataque diário e reporting"
+    },
+    {
+      "name": "boltr-mcp",
+      "source": "./boltr-mcp",
+      "description": "BOLTR Tasks MCP Server: 25 tools para gerenciar tasks, lists, goals, focus sessions e sprints via IA"
     }
   ]
 }

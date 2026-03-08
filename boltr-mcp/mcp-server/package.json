@@ -1,0 +1,21 @@
+{
+  "name": "boltr-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for BOLTR Tasks - manage tasks, lists, goals, focus sessions, and sprints via AI agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.3"
+  }
+}
