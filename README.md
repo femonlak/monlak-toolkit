@@ -42,7 +42,7 @@ Instalar plugins específicos:
 | /fix | new-feature | Investigar e corrigir bugs com confirmação de entendimento e proposta de soluções |
 | /enhance-feature | new-feature | Adicionar melhoria incremental em feature existente |
 | /git-sync | deploy-vercel | Sincronizar repositório local com remoto, apresentando plano antes de executar |
-| /monlak-toolkit | toolkit-meta | Adicionar ou atualizar arquivo no plugin monlak-toolkit |
+| /monlak-toolkit | toolkit-meta | Adicionar ou atualizar componente no monlak-toolkit (skill, plugin, command, agent, hook) |
 | /ataque | bizdev | Plano de ataque comercial do dia |
 | /pipeline | bizdev | Visualização do funil por projeto |
 | /diagnostico | bizdev | Diagnóstico de saúde do pipeline (score 0-100) |
@@ -84,6 +84,13 @@ monlak-toolkit/
 ├── toolkit-meta/
 │   ├── .claude-plugin/
 │   │   └── plugin.json
+│   ├── skills/
+│   │   └── monlak-toolkit/
+│   │       ├── SKILL.md
+│   │       └── references/
+│   │           ├── repo-map.md
+│   │           ├── skill-spec.md
+│   │           └── examples.md
 │   └── commands/
 │       └── monlak-toolkit.md
 ├── consulting/

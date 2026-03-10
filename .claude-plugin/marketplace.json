@@ -17,7 +17,7 @@
     {
       "name": "toolkit-meta",
       "source": "./toolkit-meta",
-      "description": "Comando /monlak-toolkit para gerenciar o próprio monlak-toolkit (adicionar/atualizar plugins)"
+      "description": "Skill de conhecimento do monlak-toolkit + comando /monlak-toolkit para adicionar/atualizar plugins, skills e commands"
     },
     {
       "name": "consulting",
