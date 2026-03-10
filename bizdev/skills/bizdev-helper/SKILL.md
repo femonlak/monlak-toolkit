@@ -11,7 +11,7 @@ description: >
   (6) criar project updates do pipeline.
   Disparar sempre que o contexto envolver pipeline comercial, funil de vendas,
   oportunidades de parceria, follow-ups, ou menções ao time Partners no Linear.
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Sales Pipeline Coach
@@ -31,17 +31,20 @@ Organizar ações prioritárias baseadas nos últimos comentários de cada oport
 **Trigger:** "montar plano de ataque", "o que preciso fazer", "prioridades comerciais", "organizar ações"
 
 **Workflow:**
-1. Perguntar qual projeto/funil (ou todos)
-2. Listar issues no projeto com status ativos (To Contact a In Discussion)
-3. Para cada issue: buscar comentários para pegar último comentário
-4. Extrair de cada comentário: próximos passos, pendências, datas de follow-up
-5. Calcular Pipeline Activity Score (ver references/pipeline-scoring.md) para exibir no topo
-6. Filtrar apenas oportunidades que precisam de ação HOJE, priorizando por:
+1. **Sempre rodar em TODOS os projetos/pipelines** (Poker Operators, Offline Cashier, Affiliate Partners, Payment Integrations). Nunca perguntar qual projeto.
+2. Identificar o usuário que pediu: buscar usuário atual ("me") no Linear
+3. Para cada projeto: listar issues com status ativos (To Contact a In Discussion) e **assignee = "me"** (filtrar APENAS issues do usuário que pediu)
+4. Para cada issue: buscar comentários para pegar último comentário
+5. Separar issues em dois grupos:
+   - **Com comentários:** extrair próximos passos, pendências, datas de follow-up do último comentário
+   - **Sem nenhum comentário:** separar para a seção "Oportunidades Mapeadas e Paradas"
+6. Calcular Pipeline Activity Score (ver references/pipeline-scoring.md) para exibir no topo
+7. Das issues COM comentários, filtrar as que precisam de ação HOJE, priorizando por:
    - Urgência do estágio (peso por status, ver references/pipeline-scoring.md)
    - Tempo desde última atividade (mais parado = mais urgente)
    - Prioridade da issue no Linear
    - Deadlines vencidos ou vencendo hoje
-7. Apresentar plano de ação focado no dia + to-do list executável no final
+8. Apresentar plano de ação focado no dia + to-do list executável + seção obrigatória de oportunidades paradas
 
 **Escopo temporal padrão:**
 - O plano de ataque cobre APENAS o dia de hoje por padrão
@@ -51,17 +54,17 @@ Organizar ações prioritárias baseadas nos últimos comentários de cada oport
 **Formato de saída:**
 
 ```
-## Plano de Ataque - [Projeto] - [Data]
+## Plano de Ataque - Todos os Pipelines - [Data]
 
 **Pipeline Activity Score: XX/100** [emoji] [classificação]
 
-[X] oportunidades no funil, [Y] Live ([nomes])
+[X] oportunidades suas no funil, [Y] Live ([nomes])
 
 ---
 
 ### URGENTE (ação hoje)
 
-**[Oportunidade]** ([STATUS], [Prioridade])
+**[Oportunidade]** ([PROJETO] | [STATUS], [Prioridade])
 * **Task:** [verbo + ação específica a ser executada]
 * **Contexto:** [explicação consultiva: onde estamos nessa oportunidade, o que precisa ser feito e por quê. Tom de advisor, não de relatório.]
 
@@ -77,18 +80,37 @@ Organizar ações prioritárias baseadas nos últimos comentários de cada oport
 
 ---
 
-[X] ações. [Comentário provocativo de coach sobre urgência se aplicável.]
+### Oportunidades Mapeadas e Paradas
+
+Issues ativas assigned a você que não possuem nenhum comentário. Estão no funil mas ninguém mexeu nelas ainda.
+
+**[Oportunidade]** ([PROJETO] | [STATUS]) - criada há [X dias]
+> **Ação:** [sugestão concreta do que fazer como primeiro passo]
+> **Coach:** [comentário provocativo incentivando a pessoa a tirar isso do papel. Ex: "Essa oportunidade existe há 12 dias e ninguém deu um oi. Vai esfriar antes de esquentar."]
+
+[Repetir para cada oportunidade sem comentários]
+
+**Total: [N] oportunidades paradas sem nenhuma movimentação. Não deixa virar cemitério.**
+
+---
+
+[X] ações + [Y] oportunidades paradas. [Comentário provocativo de coach.]
 ```
 
 **Regras do formato:**
 - Sempre incluir Pipeline Activity Score no topo (só o score com classificação, não o breakdown completo)
+- Sempre rodar em todos os pipelines, nunca perguntar qual projeto
+- Filtrar apenas issues assigned ao usuário que pediu (assignee = "me")
 - Apenas oportunidades com ação necessária HOJE aparecem na seção URGENTE
 - Cada oportunidade tem exatamente 2 campos: **Task** e **Contexto**
 - Task é sempre verbo + ação executável (ex: "Enviar follow-up...", "Acionar fulano para...", "Identificar contato...")
 - Contexto é consultivo: explica a situação atual, por que a ação é necessária e riscos de não agir
 - Não usar bullet points dentro do Contexto, escrever em texto corrido
 - Não incluir issue codes (PARTNER-XX)
+- Incluir o nome do PROJETO entre parênteses em cada oportunidade (já que roda em todos os pipelines)
 - A To-Do List no final é obrigatória e deve ser uma checklist limpa (- [ ]) sem explicações adicionais
+- A seção "Oportunidades Mapeadas e Paradas" é OBRIGATÓRIA. Mostra issues ativas sem nenhum comentário. Se não houver nenhuma, dizer "Nenhuma oportunidade parada sem comentários. Bom sinal."
+- O tom da seção de paradas é de coach cobrando: provocativo, direto, sem ser rude. Incentivar a pessoa a dar o primeiro passo.
 - Não incluir seções de "Esta Semana", "Monitorar" ou "Oportunidades Dormindo" a menos que o usuário peça explicitamente
 - Se nenhuma oportunidade precisa de ação hoje, dizer isso claramente em vez de forçar ações artificiais
 
