@@ -19,6 +19,7 @@ Instalar plugins específicos:
 /plugin install last30days@femonlak-monlak-toolkit
 /plugin install bizdev@femonlak-monlak-toolkit
 /plugin install frontend-slides@femonlak-monlak-toolkit
+/plugin install skynet-agent-builder@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -34,6 +35,7 @@ Instalar plugins específicos:
 | last30days | Pesquisa tópicos no Reddit + X + Web dos últimos 30 dias, sintetiza insights e gera prompts copy-paste | "/last30days [tópico]", "pesquisar sobre X nos últimos 30 dias" |
 | bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
 | frontend-slides | Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint, com 12 presets visuais | "create presentation", "convert pptx", "make slides", "/frontend-slides" |
+| skynet-agent-builder | Criar e documentar agentes autônomos e skills para o Projeto Skynet com templates OpenClaw e gestão via Linear | "criar agente", "novo agente", "skynet", "documentar agente", "criar skill para agente" |
 
 ## Slash Commands
 
@@ -169,6 +171,16 @@ monlak-toolkit/
 │               ├── animation-patterns.md
 │               └── scripts/
 │                   └── extract-pptx.py
+├── skynet-agent-builder/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── skynet-agent-builder/
+│           ├── SKILL.md
+│           └── references/
+│               ├── agent-template.md
+│               ├── skill-template.md
+│               └── skynet-agents.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

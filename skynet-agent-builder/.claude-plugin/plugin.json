@@ -1,0 +1,5 @@
+{
+  "name": "skynet-agent-builder",
+  "description": "Criar e documentar agentes autônomos e skills para o Projeto Skynet: templates, Linear issues, OpenClaw files",
+  "version": "1.0.0"
+}
