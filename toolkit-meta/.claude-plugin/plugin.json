@@ -1,5 +1,5 @@
 {
   "name": "toolkit-meta",
-  "description": "Comando /monlak-toolkit para gerenciar o próprio monlak-toolkit (adicionar/atualizar plugins)",
-  "version": "2.0.0"
+  "description": "Skill de conhecimento do monlak-toolkit + comando /monlak-toolkit para adicionar/atualizar plugins, skills e commands",
+  "version": "3.0.0"
 }
