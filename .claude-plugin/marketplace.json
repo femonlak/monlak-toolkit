@@ -48,6 +48,11 @@
       "name": "frontend-slides",
       "source": "./frontend-slides",
       "description": "Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint"
+    },
+    {
+      "name": "skynet-agent-builder",
+      "source": "./skynet-agent-builder",
+      "description": "Criar e documentar agentes autônomos e skills para o Projeto Skynet: templates, Linear issues, OpenClaw files"
     }
   ]
 }
