@@ -11,7 +11,7 @@ description: >
   (6) criar project updates do pipeline.
   Disparar sempre que o contexto envolver pipeline comercial, funil de vendas,
   oportunidades de parceria, follow-ups, ou menções ao time Partners no Linear.
-version: 0.2.0
+version: 0.2.1
 ---
 
 # Sales Pipeline Coach
@@ -33,7 +33,8 @@ Organizar ações prioritárias baseadas nos últimos comentários de cada oport
 **Workflow:**
 1. **Sempre rodar em TODOS os projetos/pipelines** (Poker Operators, Offline Cashier, Affiliate Partners, Payment Integrations). Nunca perguntar qual projeto.
 2. Identificar o usuário que pediu: buscar usuário atual ("me") no Linear
-3. Para cada projeto: listar issues com status ativos (To Contact a In Discussion) e **assignee = "me"** (filtrar APENAS issues do usuário que pediu)
+3. Para cada projeto: listar issues com status ativos (To Contact a In Discussion) e **assignee = "me"** (filtrar APENAS issues do usuário que pediu).
+   **IMPORTANTE - Edge case "In Discussion":** Issues que já foram "Live" e voltaram para "In Discussion" possuem `completedAt` preenchido no Linear. A API do Linear NÃO retorna essas issues nos filtros por categoria "started"/"unstarted". Para garantir cobertura completa, SEMPRE fazer uma query adicional por projeto com `state: "In Discussion"` (filtro por nome do status, não por categoria) e `assignee: "me"`. Mesclar os resultados removendo duplicatas antes de prosseguir.
 4. Para cada issue: buscar comentários para pegar último comentário
 5. Separar issues em dois grupos:
    - **Com comentários:** extrair próximos passos, pendências, datas de follow-up do último comentário
