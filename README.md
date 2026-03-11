@@ -20,6 +20,7 @@ Instalar plugins específicos:
 /plugin install bizdev@femonlak-monlak-toolkit
 /plugin install frontend-slides@femonlak-monlak-toolkit
 /plugin install skynet-agent-builder@femonlak-monlak-toolkit
+/plugin install kickoff@femonlak-monlak-toolkit
 ```
 
 ## Skills
@@ -36,6 +37,7 @@ Instalar plugins específicos:
 | bizdev | Coach comercial: plano de ataque diário, diagnóstico de pipeline (score 0-100), visualização de funil e reporting | "plano de ataque", "como tá o pipeline?", "o que tá parado?" |
 | frontend-slides | Criar apresentações HTML com animações a partir do zero ou convertendo PowerPoint, com 12 presets visuais | "create presentation", "convert pptx", "make slides", "/frontend-slides" |
 | skynet-agent-builder | Criar e documentar agentes autônomos e skills para o Projeto Skynet com templates OpenClaw e gestão via Linear | "criar agente", "novo agente", "skynet", "documentar agente", "criar skill para agente" |
+| kickoff | Rotina matinal: processa inbox, padroniza tasks, equaliza carga e monta day planning com sprints e MITs no Boltr | "kickoff", "começar o dia", "planejar o dia", "morning planning", "rotina da manhã", "o que tenho pra hoje" |
 
 ## Slash Commands
 
@@ -181,6 +183,12 @@ monlak-toolkit/
 │               ├── agent-template.md
 │               ├── skill-template.md
 │               └── skynet-agents.md
+├── kickoff/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/
+│       └── kickoff/
+│           └── SKILL.md
 ├── global/
 │   └── CLAUDE.md
 ├── hooks/

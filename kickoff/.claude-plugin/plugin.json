@@ -1,0 +1,8 @@
+{
+  "name": "kickoff",
+  "version": "1.0.0",
+  "description": "Rotina matinal de gerenciamento de tarefas no Boltr: inbox processing, padronização e day planning",
+  "author": {
+    "name": "Monlak"
+  }
+}

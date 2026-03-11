@@ -53,6 +53,11 @@
       "name": "skynet-agent-builder",
       "source": "./skynet-agent-builder",
       "description": "Criar e documentar agentes autônomos e skills para o Projeto Skynet: templates, Linear issues, OpenClaw files"
+    },
+    {
+      "name": "kickoff",
+      "source": "./kickoff",
+      "description": "Rotina matinal de gerenciamento de tarefas no Boltr: inbox processing, padronização e day planning"
     }
   ]
 }
